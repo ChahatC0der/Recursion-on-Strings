@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class javabasics{
+    
+    public static String answerString=new String();
+    public static boolean[] present=new boolean[26];
+    public static String removeDuplicatesOfAllCharacterInAStringUsingRecursion(String s1,int idx){
+        
+        if(idx==s1.length()){          
+            return " ";
+        }
+        answerString=removeDuplicatesOfAllCharacterInAStringUsingRecursion(s1, idx+1);
+        char currChar=s1.charAt(idx);
+
+        if( present[currChar-'a']==true) {
+            return answerString;
+        }else{
+            present[currChar-'a']=true;
+            return currChar+answerString;
+        }
+        
+
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s1=sc.next();
+        // String characterToBeRemoved = sc.next();   
+        System.out.println(removeDuplicatesOfAllCharacterInAStringUsingRecursion(s1,0));
+           
+    }
+}
