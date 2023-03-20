@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class javabasics{
     
     public static String answerString=new String();
-    public static String removeOccurencesInAStringUsingRecursion(String s1,String characterToBeRemoved,int idx){
+    public static String removeDuplicatesInAStringUsingRecursion(String s1,String characterToBeRemoved,int idx){
         
         if(idx==s1.length()){          
             return " ";
         }
-        answerString=removeOccurencesInAStringUsingRecursion(s1, characterToBeRemoved, idx+1);
+        answerString=removeDuplicatesInAStringUsingRecursion(s1, characterToBeRemoved, idx+1);
         char currChar=s1.charAt(idx);
         if(currChar!=characterToBeRemoved.charAt(0)){
             return currChar+answerString;
@@ -22,7 +22,7 @@ public class javabasics{
         Scanner sc = new Scanner(System.in);
         String s1=sc.next();
         String characterToBeRemoved = sc.next();   
-        System.out.println(removeOccurencesInAStringUsingRecursion(s1,characterToBeRemoved,0));
+        System.out.println(removeDuplicatesInAStringUsingRecursion(s1,characterToBeRemoved,0));
            
     }
 }
