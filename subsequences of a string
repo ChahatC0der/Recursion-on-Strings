@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class javabasics{
+    
+    public static String cuString;
+    public static void printXToThePowerOfN(String s1,String s) {
+        if( s1.length()==0 ){
+            System.out.println(s);
+            return;
+        }
+        printXToThePowerOfN(s1.substring(1), s+s1.charAt(0)); 
+
+        printXToThePowerOfN(s1.substring(1), s);  
+    }
+     
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s1= sc.next();
+        printXToThePowerOfN(s1," ");  
+    }
+}
